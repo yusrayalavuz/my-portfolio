@@ -1,0 +1,51 @@
+/** @type {Array<{id:string, year:string, title:string, sub:string, desc:string, status:'active'|'done'}>} */
+export const learningTimeline = [
+  {
+    id: 'yzta',
+    year: '01.2026 — Devam Ediyor',
+    title: 'Yapay Zeka ve Teknoloji Akademisi',
+    sub: 'Yapay Zeka Modülü',
+    desc: 'Türkiye\'nin önde gelen kurumları tarafından yürütülen akademi kapsamında yapay zeka modülünde eğitim alıyorum. Makine öğrenmesi, derin öğrenme, doğal dil işleme ve büyük dil modelleri konularında ileri seviye çalışmalar.',
+    status: 'active',
+  },
+  {
+    id: 'veri-okulu',
+    year: '10.2025 — Devam Ediyor',
+    title: 'Veri Analizi Okulu – Yapay Zeka Modülü',
+    sub: 'YÖK · Marmara, Boğaziçi, ODTÜ, İTÜ',
+    desc: 'YÖK öncülüğünde, Marmara Üniversitesi koordinasyonunda; Boğaziçi, ODTÜ ve İTÜ katkılarıyla yürütülen program. İstatistiksel analiz, Python & R, makine öğrenmesi, derin öğrenme, LLM ve RAG sistemleri.',
+    status: 'active',
+  },
+  {
+    id: 'veri-bootcamp',
+    year: '04.2025 — 07.2025',
+    title: 'Veri Analizi Bootcamp',
+    sub: 'Patika.dev – Kız Başına',
+    desc: 'Python ile veri analizi ve görselleştirme (Pandas, NumPy, Matplotlib, Seaborn), SQL ile veri sorgulama, Power BI ile performans ve süreç odaklı raporlar.',
+    status: 'done',
+  },
+  {
+    id: 'yapay-zeka-egitimi',
+    year: '10.2024 — 01.2025',
+    title: 'Python ile Yapay Zeka Eğitimi',
+    sub: 'WTech & Ford Otosan – Gelecek Hayalim',
+    desc: 'Python temelleri, makine öğrenmesi ve temel derin öğrenme. Veri ön işleme, modelleme çalışmaları ve scikit-learn ile uygulamalı projeler.',
+    status: 'done',
+  },
+  {
+    id: 'fullstack',
+    year: '01.2024 — 10.2024',
+    title: "Full Stack Development Eğitimi",
+    sub: "Archi's Academy",
+    desc: "Frontend (HTML, CSS, JS, TypeScript, React.js, Next.js), Backend (Java, Firebase, API), Git & GitHub, Agile süreçler ve takım bazlı proje geliştirme.",
+    status: 'done',
+  },
+  {
+    id: 'universite',
+    year: '09.2017 — 07.2023',
+    title: 'Lisans & Yandal Mezuniyeti',
+    sub: 'İstanbul Sabahattin Zaim Üniversitesi',
+    desc: 'Elektrik-Elektronik Mühendisliği lisans (%100 burslu, %30 İngilizce) ve Yazılım Mühendisliği yandal programı mezuniyeti.',
+    status: 'done',
+  },
+]

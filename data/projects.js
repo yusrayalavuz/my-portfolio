@@ -1,0 +1,51 @@
+/** @type {Array<{id:string, icon:string, name:string, desc:string, tags:string[], github?:string}>} */
+export const projects = [
+  {
+    id: 'lms',
+    icon: '📚',
+    name: 'E-Tutor LMS',
+    desc: 'Next.js, TypeScript ve Sass kullanarak çok cihaz uyumlu, kullanıcı dostu öğrenme yönetim sistemi. Video dersler, ilerleme takibi ve interaktif içerik yönetimi.',
+    tags: ['Next.js', 'TypeScript', 'Sass'],
+    github: 'https://github.com/yusrayalavuz/e-tutor-lms-project',
+  },
+  {
+    id: 'food',
+    icon: '🍕',
+    name: 'Yemek Sipariş Uygulaması',
+    desc: 'React, Sass ve JavaScript ile kategori bazlı yemek sipariş platformu. Firebase Firestore veritabanı, güvenli ödeme ve rol bazlı kimlik doğrulama entegrasyonu.',
+    tags: ['React', 'JavaScript', 'Firebase'],
+    github: 'https://github.com/yusrayalavuz/food-order-app',
+  },
+  {
+    id: 'energy',
+    icon: '⚡',
+    name: 'Enerji Verimliliği Tahmini',
+    desc: 'Python ile veri temizleme, aykırı değer analizi ve özellik mühendisliği yaparak Random Forest, Gradient Boosting ve SVR algoritmalarıyla enerji verimliliği tahmin modelleri.',
+    tags: ['Python', 'Scikit-learn', 'Pandas'],
+    github: 'https://github.com/yusrayalavuz/EnergyEfficiencyML',
+  },
+  {
+    id: 'traffic',
+    icon: '🚗',
+    name: 'Trafik Kazaları Veri Analizi',
+    desc: '1.6M+ veri üzerinde kaza yoğunluğu, zaman-mekan ilişkileri ve risk faktörleri analizi. Kapsamlı görselleştirme ve istatistiksel çıkarımlar.',
+    tags: ['Python', 'Pandas', 'Seaborn'],
+    github: 'https://github.com/yusrayalavuz/traffic-accidents-uk-2005-2014',
+  },
+  {
+    id: 'ecommerce-pbi',
+    icon: '📊',
+    name: 'E-Ticaret Satış Analizi',
+    desc: 'Kapsamlı bir e-ticaret veri seti üzerinde Power BI ile uçtan uca analiz. Power Query veri temizliği, DAX modelleme ve dinamik KPI hesaplamaları ile mobil uyumlu raporlar.',
+    tags: ['Power BI', 'DAX', 'Power Query'],
+    github: 'https://github.com/yusrayalavuz/ETicaret_PowerBI_Veri_Analizi',
+  },
+  {
+    id: 'airline',
+    icon: '✈️',
+    name: 'Havayolu Yolcu Memnuniyeti',
+    desc: 'Havayolu yolcu memnuniyeti verisinde keşifsel analiz. Veri temizleme, görselleştirme ve temel trendler ile memnuniyet faktörlerinin belirlenmesi.',
+    tags: ['Python', 'Pandas', 'Matplotlib'],
+    github: 'https://github.com/yusrayalavuz/airline-passenger-analysis',
+  },
+]
