@@ -2,7 +2,6 @@ import { Fraunces, Instrument_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-/* Editorial serif — display/headlines */
 const fraunces = Fraunces({
   subsets: ['latin'],
   weight: ['400', '600', '700', '800', '900'],
@@ -11,7 +10,6 @@ const fraunces = Fraunces({
   display: 'swap',
 })
 
-/* Clean humanist sans — body */
 const instrumentSans = Instrument_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
@@ -57,6 +55,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="tr" className={`${fraunces.variable} ${instrumentSans.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('theme');
+                  if (saved === 'light') {
+                    document.documentElement.classList.add('light');
+                  }
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body>
         {children}
         <Analytics />
