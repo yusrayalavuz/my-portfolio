@@ -16,22 +16,17 @@ export default function HomePage() {
 
       <main
         style={{
-          background: '#0b0911',
+          background: 'var(--bg)',
           overflow: 'hidden',
+          transition: 'background var(--T)',
         }}
       >
         <HeroSection />
-
         <AboutSection />
-
         <ExperienceSection />
-
         <ProjectsSection />
-
         <SkillsSection />
-
         <LearningSection />
-
         <ContactSection />
       </main>
 

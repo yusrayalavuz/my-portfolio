@@ -65,14 +65,7 @@ export default function ContactSection() {
           zIndex: 1,
         }}
       >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "5rem",
-            alignItems: "center",
-          }}
-        >
+        <div className="contact-grid">
           {/* LEFT */}
           <div className="rev">
             <p
@@ -104,6 +97,7 @@ export default function ContactSection() {
             </p>
 
             <h2
+              className="contact-title-main"
               style={{
                 fontFamily: "var(--font-fraunces), serif",
                 fontSize: "clamp(2.3rem, 4vw, 4rem)",
@@ -122,6 +116,7 @@ export default function ContactSection() {
             </h2>
 
             <p
+              className="contact-text-desc"
               style={{
                 fontSize: "0.95rem",
                 color: "var(--text2)",
@@ -197,21 +192,22 @@ export default function ContactSection() {
 
           {/* RIGHT — avatar */}
           <div
-            className="rev"
+            className="rev contact-avatar-wrapper"
             style={{
               position: "relative",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              minHeight: 520,
+              minHeight: 400,
             }}
           >
+            {/* Arka plan daire */}
             <div
               style={{
                 position: "absolute",
-                width: 420,
-                height: 295,
-                bottom: 80,
+                width: "min(420px, 90vw)",
+                height: "min(295px, 63vw)",
+                bottom: 60,
                 borderRadius: "50%",
                 background:
                   "linear-gradient(135deg, var(--accent-dim) 0%, var(--accent) 100%)",
@@ -221,12 +217,13 @@ export default function ContactSection() {
                 transition: "background var(--T), box-shadow var(--T)",
               }}
             />
+            {/* Ambient glow */}
             <div
               aria-hidden
               style={{
                 position: "absolute",
-                width: 600,
-                height: 600,
+                width: "min(600px, 95vw)",
+                height: "min(600px, 95vw)",
                 borderRadius: "50%",
                 background:
                   "radial-gradient(circle, var(--accent-glow) 0%, transparent 70%)",
@@ -234,12 +231,13 @@ export default function ContactSection() {
                 transition: "background var(--T)",
               }}
             />
+            {/* Avatar image */}
             <div
               style={{
                 position: "relative",
                 zIndex: 5,
-                width: 480,
-                height: 440,
+                width: "min(480px, 90vw)",
+                height: "min(440px, 82vw)",
                 overflow: "hidden",
                 display: "flex",
                 alignItems: "flex-end",
@@ -251,7 +249,7 @@ export default function ContactSection() {
                 alt="Yüsra Yalavuz"
                 width={480}
                 height={480}
-                priority={false}
+                priority={true}
                 style={{
                   width: "100%",
                   height: "auto",
@@ -268,6 +266,190 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
+
+      {/* Responsive styles */}
+      <style jsx global>{`
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 5rem;
+          align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+          .contact-grid {
+            gap: 3rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          /* Section padding mobil */
+          section[data-section="contact"] > div {
+            padding: 2rem 1.5rem !important;
+          }
+
+          /* Section heights */
+          section[data-section="contact"] {
+            min-height: auto !important;
+            padding: 0 !important;
+          }
+
+          .contact-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.6rem !important;
+          }
+
+          /* LEFT div'i transparent yap, children'ı flex container'ın direct child'ı yap */
+          .contact-grid > .rev:not(.contact-avatar-wrapper) {
+            display: contents !important;
+          }
+
+          /* Sıralama: 1. İletişim etiketi */
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > p:first-of-type {
+            order: 1 !important;
+          }
+
+          /* 2. Başlık */
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > h2 {
+            order: 2 !important;
+          }
+
+          /* 3. Açıklama */
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > p:last-of-type {
+            order: 3 !important;
+          }
+
+          /* 4. Avatar */
+          .contact-grid > .rev.contact-avatar-wrapper {
+            order: 4 !important;
+            min-height: auto !important;
+            margin: 0.2rem 0 0.6rem 0 !important;
+            padding: 0 !important;
+            justify-content: center !important;
+          }
+
+          /* Mobilde tüm arka plan efektlerini gizle */
+          .contact-avatar-wrapper > div:nth-child(1),
+          .contact-avatar-wrapper > div:nth-child(2) {
+            display: none !important;
+          }
+
+          /* Avatar container - küçük boyut */
+          .contact-avatar-wrapper > div:last-child {
+            width: 140px !important;
+            height: 140px !important;
+            max-width: none !important;
+            margin: 0 auto !important;
+            overflow: hidden !important;
+          }
+
+          /* Avatar image */
+          .contact-avatar-wrapper img {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: none !important;
+            height: auto !important;
+            transform: translateY(0) !important;
+            object-fit: contain !important;
+          }
+
+          /* 5. İletişim kartları (linkler) */
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > div {
+            order: 5 !important;
+            max-width: 100% !important;
+          }
+
+          /* Tüm metinler ortalı */
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > p,
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > h2 {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+
+          /* Metinleri küçült ve responsive yap */
+          .contact-title-main {
+            font-size: 1.8rem !important;
+            margin-bottom: 0.6rem !important;
+            margin-top: 0 !important;
+          }
+
+          .contact-text-desc {
+            font-size: 0.85rem !important;
+            margin-bottom: 0.8rem !important;
+            margin-top: 0 !important;
+          }
+
+          /* İletişim linklerini mobil için düzenle */
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > div a {
+            font-size: 0.8rem !important;
+            padding: 9px 0 !important;
+            gap: 10px !important;
+          }
+
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > div a span {
+            width: 30px !important;
+            height: 30px !important;
+            font-size: 0.85rem !important;
+          }
+
+          /* Üstteki label (İletişim) stilini ayarla */
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > p:first-of-type {
+            font-size: 0.6rem !important;
+            margin-bottom: 0.3rem !important;
+            margin-top: 0 !important;
+            justify-content: center !important;
+          }
+
+          .contact-grid
+            > .rev:not(.contact-avatar-wrapper)
+            > p:first-of-type
+            span {
+            width: 14px !important;
+            height: 1px !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          section[data-section="contact"] > div {
+            padding: 1.5rem 1rem !important;
+          }
+
+          .contact-title-main {
+            font-size: 1.5rem !important;
+            margin-bottom: 0.4rem !important;
+          }
+
+          .contact-text-desc {
+            font-size: 0.8rem !important;
+            margin-bottom: 0.6rem !important;
+            line-height: 1.5 !important;
+          }
+
+          .contact-avatar-wrapper > div:last-child {
+            width: 250px !important;
+            height: 150px !important;
+            margin: 0.2rem auto !important;
+          }
+
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > div a {
+            font-size: 0.75rem !important;
+            padding: 8px 0 !important;
+          }
+
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > div a span {
+            width: 28px !important;
+            height: 28px !important;
+            font-size: 0.8rem !important;
+          }
+
+          .contact-grid > .rev:not(.contact-avatar-wrapper) > p:first-of-type {
+            font-size: 0.55rem !important;
+            margin-bottom: 0.2rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

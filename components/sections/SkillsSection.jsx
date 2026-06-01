@@ -36,7 +36,7 @@ export default function SkillsSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
             gap: "1.2rem",
           }}
         >

@@ -4,24 +4,12 @@
 
 /* ══════════════════════════════════════════════════════
    DESIGN SYSTEM v3 — SOFT LAVENDER / EDITORIAL DARK
-   
-   Palette philosophy:
-   - Backgrounds: warm near-black with slight purple undertone
-   - Accent: dusty lavender / muted mauve — never neon
-   - Text: warm off-white, not pure white
-   - Cards: very subtle glass with warm tint
-   - Borders: barely-there, cohesive
-   
-   Font system:
-   - Display: Fraunces — editorial, warm, premium serif
-   - Body:    Instrument Sans — clean, modern, humanist
    ══════════════════════════════════════════════════════ */
 
 :root {
-  /* ── LAYOUT ── */
   --nav-height: 58px;
+  --nav-bg: rgba(13, 12, 24, 0.78);
 
-  /* ── SPACING (8pt grid) ── */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -35,7 +23,6 @@
   --space-20: 5rem;
   --space-28: 7rem;
 
-  /* ── RADIUS ── */
   --r-sm: 6px;
   --r-md: 10px;
   --r-lg: 16px;
@@ -43,46 +30,35 @@
   --r-2xl: 30px;
   --r-full: 9999px;
 
-  /* ── BACKGROUNDS — warm near-black ── */
   --bg: #0d0c18;
   --bg2: #100f1e;
   --bg3: #141324;
 
-  /* ── SURFACES ── */
   --panel: rgba(255, 255, 255, 0.025);
   --card: rgba(255, 255, 255, 0.032);
   --card-hover: rgba(255, 255, 255, 0.055);
 
-  /* ── TYPOGRAPHY — warm off-white ── */
   --text: #ede9ff;
   --text2: #a09abd;
   --text3: #635e7a;
 
-  /* ── ACCENT — dusty lavender, NOT neon ── */
   --accent: #9b8ec4;
-  /* muted lavender */
   --accent-light: #b8addc;
-  /* hover / lighter */
   --accent-dim: #7a6fa8;
-  /* deeper, for active states */
   --accent-subtle: rgba(155, 142, 196, 0.10);
   --accent-glow: rgba(155, 142, 196, 0.14);
 
-  /* ── BORDERS ── */
   --border: rgba(155, 142, 196, 0.10);
   --border2: rgba(155, 142, 196, 0.06);
 
-  /* ── SHADOWS ── */
   --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 4px 18px rgba(0, 0, 0, 0.30);
   --shadow-lg: 0 14px 44px rgba(0, 0, 0, 0.38);
   --shadow-glow: 0 0 28px rgba(155, 142, 196, 0.12);
 
-  /* ── HERO ── */
   --hero-left: transparent;
   --hero-right: transparent;
 
-  /* ── MOTION ── */
   --T: 0.60s cubic-bezier(0.4, 0, 0.2, 1);
   --T-fast: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   --T-slow: 0.90s cubic-bezier(0.4, 0, 0.2, 1);
@@ -90,6 +66,8 @@
 
 /* ══ LIGHT THEME ══ */
 .light {
+  --nav-bg: rgba(247, 245, 255, 0.92);
+
   --bg: #f7f5ff;
   --bg2: #f0ecff;
   --bg3: #ffffff;
@@ -151,8 +129,6 @@ body {
 /* ══════════════════════════════════════════════════════
    TYPOGRAPHY SCALE
    ══════════════════════════════════════════════════════ */
-
-/* Display — Fraunces */
 h1,
 h2,
 .display {
@@ -162,7 +138,6 @@ h2,
   font-weight: 700;
 }
 
-/* Section titles specifically */
 .section-title {
   font-family: var(--font-fraunces), 'Fraunces', Georgia, serif;
   font-weight: 700;
@@ -171,7 +146,6 @@ h2,
   color: var(--text);
 }
 
-/* Eyebrow labels */
 .label {
   font-family: var(--font-instrument), sans-serif;
   font-size: 0.68rem;
@@ -226,7 +200,6 @@ h2,
   position: relative;
 }
 
-/* Primary — filled, soft lavender */
 .btn-primary {
   background: var(--accent);
   color: #fff;
@@ -247,7 +220,6 @@ h2,
   transform: translateY(0);
 }
 
-/* Secondary — ghost */
 .btn-secondary {
   background: var(--accent-subtle);
   color: var(--accent-light);
@@ -332,6 +304,13 @@ h2,
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
+}
+
+/* ══════════════════════════════════════════════════════
+   NAVBAR BACKGROUND — CSS variable ile tema flash yok
+   ══════════════════════════════════════════════════════ */
+.nav-wrap {
+  background: var(--nav-bg) !important;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -482,7 +461,7 @@ h2,
 }
 
 /* ══════════════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — HERO
    ══════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   #hero {
@@ -504,5 +483,81 @@ h2,
     padding: var(--space-10) var(--space-6) !important;
     min-height: calc(100vh - var(--nav-height)) !important;
     height: auto !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — GENEL
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  section>div {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  h1,
+  h2 {
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  section>div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — NAVBAR
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .nav-desktop-links {
+    display: none !important;
+  }
+
+  .hamburger-btn {
+    display: flex !important;
+  }
+
+  .theme-label {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-wrap {
+    padding: 0.85rem 1.2rem !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — CONTACT SECTION
+   ══════════════════════════════════════════════════════ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .contact-avatar-wrapper {
+    min-height: 280px !important;
+  }
+
+  #contact>div {
+    padding: 3rem 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-avatar-wrapper {
+    min-height: 220px !important;
   }
 }
