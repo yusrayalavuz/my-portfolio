@@ -88,7 +88,7 @@ export default function HeroSection() {
               flexShrink: 0,
             }}
           />
-          Yüsra Yalavuz · Frontend &amp; AI Developer
+          Yüsra Yalavuz · Software Developer
         </p>
 
         {/* Headline */}
@@ -144,8 +144,8 @@ export default function HeroSection() {
             fontFamily: "var(--font-instrument), sans-serif",
           }}
         >
-          Frontend development, veri analizi ve yapay zeka tabanlı çözümler
-          geliştirerek kullanıcı odaklı modern dijital deneyimler oluşturuyorum.
+          Frontend, backend ve yapay zeka tabanlı çözümler geliştirerek
+          kullanıcı odaklı modern dijital deneyimler oluşturuyorum.
         </p>
 
         {/* CTAs */}

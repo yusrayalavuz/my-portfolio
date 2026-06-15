@@ -6,6 +6,11 @@ export const skillGroups = [
     items: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Sass'],
   },
   {
+    id: 'backend',
+    title: 'Backend',
+    items: ['ASP.NET Core 8', 'C#', 'Entity Framework Core', 'RESTful API', 'Web API'],
+  },
+  {
     id: 'ai-data',
     title: 'AI & Data',
     items: ['Python', 'Scikit-learn', 'TensorFlow', 'Pandas', 'Power BI', 'Matplotlib'],
@@ -13,6 +18,6 @@ export const skillGroups = [
   {
     id: 'tools',
     title: 'Araçlar & Sistem',
-    items: ['Git & GitHub', 'Docker', 'Red Hat Linux', 'Firebase', 'MySQL', 'Jira'],
+    items: ['Git & GitHub', 'MS SQL Server', 'MySQL', 'Docker', 'Red Hat Linux', 'Jira'],
   },
 ]
